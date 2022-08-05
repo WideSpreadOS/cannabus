@@ -1,0 +1,100 @@
+<style>
+    #openMenuButton {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: coral;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
+        width: 60px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-right-radius: 12px;
+        cursor: pointer;
+        color: lime;
+    }
+    #closeMenuButton {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: coral;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-right-radius: 12px;
+        cursor: pointer;
+        color: lime;
+        z-index: 99999;
+    }
+    #mainMenu {
+        display: none;
+    }
+    
+    .horizontal-menu-container {
+        z-index: 99998;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        background: rgba(0, 255, 0, 0.25);
+        padding: 8px;
+        position: fixed;
+        z-index: -20;
+        top: 0;
+        left: 0;
+        min-height: 50px;
+        max-height: 100px;
+        overflow-y: auto;
+        border-bottom: 1px solid lime;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-item {
+        padding: 8px;
+    }
+
+    .menu-item a {
+        color: coral;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-shadow: 0 0 3px lime;
+        font-family: 'CorelDraw';
+    }
+</style>
+
+
+<div id="openMenuButton">
+    <span>Menu</span>
+</div>
+<div id="mainMenu">
+    <div id="closeMenuButton">X</div>
+    <div class="horizontal-menu-container">
+        <div class="menu-item"><a href="/">Home</a></div>
+        <div class="menu-item"><a href="/products">Products</a></div>
+        <div class="menu-item"><a href="/schedule">Bus Schedule</a></div>
+        <div class="menu-item"><a href="/about">About Us</a></div>
+        <div class="menu-item"><a href="/contact">Contact Us</a></div>
+    </div>
+</div>
+
+
+<script>
+    const openMenuButton = document.getElementById('openMenuButton')
+    const closeMenuButton = document.getElementById('closeMenuButton')
+    const mainMenu = document.getElementById('mainMenu')
+    openMenuButton.addEventListener('click', e => {
+        mainMenu.style.display = 'block'
+        openMenuButton.style.display = 'none'
+    })
+    closeMenuButton.addEventListener('click', e => {
+        mainMenu.style.display = 'none'
+        openMenuButton.style.display = 'flex'
+
+    })
+</script>
