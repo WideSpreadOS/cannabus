@@ -33,7 +33,12 @@ router.get('/schedule', async (req, res) => {
 
 // Products Page
 router.get('/products', async (req, res) => {
-    res.render('products', {title: 'CannaBus Products'})
+    res.render('products', {
+        title: 'CannaBus Products',
+        text_box: 'General background of who provides products and from where (more detailed information about each product on/in its product card',
+        text_box_header: 'About Our Products'
+    },
+    )
 
 
 })

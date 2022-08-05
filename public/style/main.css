@@ -15,28 +15,83 @@
     font-family: Brushed;
     src: url('../fonts/Brushed.ttf');
 }
+@font-face {
+    font-family: BiteBullet;
+    src: url('../fonts/Bite_Bullet.ttf');
+}
 body {
     background-color: #000;
     font-family: 'CorelDraw';
     font-weight: lighter;
 }
 .page-container {
-    margin-top: 80px;
+    margin-top: 100px;
     position: relative;
     z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 100px;
 }
 .page-header {
     padding: 20px;
+    width: 60%;
+    min-width: 350px;
+    margin-bottom: 50px;
 }
 .page-header h1 {
     color: #fff;
     font-weight: lighter;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     color: coral;
     text-shadow: 0 14px 15px rgba(0, 0, 0, 0.6);
 }
+.page-header-underline {
+    width: 80%;
+    height: 3px;
+    margin-top: 20px;
+    min-width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: rgba(0, 255, 0, 0.95);
+    box-shadow: 3px 3px 8px rgba(0, 255, 0, 0.65), -4px -4px 10px rgba(0, 255, 0, 0.5);
+}
+.page-text-box {
+    background-color: rgba(255, 127, 80, 0.5);
+    padding: 20px;
+    border-radius: 24px;
+    width: 80%;
+    color: lime;
+    min-width: 300px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 22px 12px rgba(0, 0, 0, 0.4);
+    border: solid 3px coral
+}
 
+.page-text-box h3 {
+    font-size: 1.8rem;
+    border-bottom: solid 1px lime;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 1px rgba(0, 255, 0, 0.75);
+    text-align: center;
+    padding: 8px;
+    font-weight: lighter;
+}
+.page-text-box p {
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: lighter;
+}
 .background-image {
     width: 100vw;
     height: 100vh;
@@ -61,6 +116,7 @@ body {
     bottom: 0;
     z-index: -99998;
     backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 
