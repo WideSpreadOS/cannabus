@@ -7,14 +7,14 @@ const bodyParser = require('body-parser')
 const app = express()
 
 
-const db = require('./config/keys').MongoURI;
-// Connect to MongoDB
-mongoose.connect(db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-    .then(() => console.log('MongoDB Connected...'))
-    .catch(err => console.log(err));
+// const db = require('./config/keys').MongoURI;
+// // Connect to MongoDB
+// mongoose.connect(db, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
+//     .then(() => console.log('MongoDB Connected...'))
+//     .catch(err => console.log(err));
 
 // const Product = require('./models/Product');
 
@@ -40,7 +40,7 @@ app.use(methodOverride('_method'));
 // Routes
 
 app.use('/', require('./routes/index'));
-// app.use('/admin', require('./routes/admin'));
+app.use('/admin', require('./routes/admin'));
 // app.use('/user', require('./routes/user'));
 
 

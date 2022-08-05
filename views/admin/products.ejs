@@ -1,0 +1,47 @@
+<style>
+
+</style>
+
+<div class="page-header">
+    <h1>
+        <%= title %>
+    </h1>
+</div>
+
+
+
+<div class="form-card">
+    <div class="form-card-header">
+        <h3>Add New Product</h3>
+    </div>
+    <form action="/admin/products/add" method="post">
+        <div class="input-group">
+            <label for="productName">Name</label>
+            <input type="text" name="name" id="productName" placeholder="Name">
+        </div>
+        <div class="input-group">
+            <label for="productScientificName">ScientificName</label>
+            <input type="text" name="scientific_name" id="productScientificName" placeholder="Scientific Name">
+        </div>
+        <div class="input-group">
+            <label for="productPrice">Price</label>
+            <input type="number" name="price" id="productPrice" placeholder="Price">
+        </div>
+        <div class="input-group">
+            <label for="productSku">SKU</label>
+            <input type="number" name="sku" id="productSku" placeholder="SKU">
+        </div>
+        
+        <div class="input-group">
+            <label for="productImage">Image</label>
+            <input type="url" name="main_image" id="productImage" placeholder="Image URL">
+        </div>
+        
+        <div class="input-group">
+            <label for="productDesc">SKU</label>
+            <textarea name="description" id="productDesc" placeholder="Description..."></textarea>
+        </div>
+
+        <div class="input-group"><button type="submit">Add Item</button></div>
+    </form>
+</div>

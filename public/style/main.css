@@ -17,11 +17,20 @@
 }
 @font-face {
     font-family: BiteBullet;
-    src: url('../fonts/Bite_Bullet.ttf');
+    src: url('../fonts/BiteBullet.ttf');
+}
+@font-face {
+    font-family: SmokeWeed;
+    src: url('../fonts/SmokeWeed.otf');
+}
+@font-face {
+    font-family: Comica;
+    src: url('../fonts/Comica.ttf');
 }
 body {
     background-color: #000;
-    font-family: 'CorelDraw';
+    /* font-family: 'CorelDraw'; */
+    font-family: 'BiteBullet';
     font-weight: lighter;
 }
 .page-container {
@@ -44,13 +53,14 @@ body {
     color: #fff;
     font-weight: lighter;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     color: coral;
     text-shadow: 0 14px 15px rgba(0, 0, 0, 0.6);
+    font-family: 'Comica';
 }
 .page-header-underline {
     width: 80%;
-    height: 3px;
+    height: 1px;
     margin-top: 20px;
     min-width: 100%;
     border-top-left-radius: 100%;
@@ -63,7 +73,7 @@ body {
     padding: 20px;
     border-radius: 24px;
     width: 80%;
-    color: lime;
+    color: rgb(75, 230, 75);
     min-width: 300px;
     max-width: 800px;
     display: flex;
@@ -76,7 +86,7 @@ body {
 
 .page-text-box h3 {
     font-size: 1.8rem;
-    border-bottom: solid 1px lime;
+    border-bottom: solid 1px rgb(75, 230, 75);
     width: 100%;
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 0 0 1px rgba(0, 255, 0, 0.75);
@@ -103,6 +113,7 @@ body {
     z-index: -99999;
     background-image: url('/images/background/bg_1a.jpg');
     background-size: cover;
+    background-position:left;
     background-repeat: no-repeat;
     backdrop-filter: blur(10px);
 }
@@ -121,3 +132,97 @@ body {
 
 
 
+        .form-card {
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(255, 127, 80, 0.25));
+            backdrop-filter: blur(4px);
+            padding: 10px;
+            border-radius: 12px;
+            min-width: 300px;
+            border: solid 1px #fff;
+            border-right: solid 1px coral;
+            border-bottom: solid 1px coral;
+        }
+        .form-card-header {
+            padding: 8px;
+            border-bottom: solid 1px lime;
+            border-radius: 3px;
+        }
+        .form-card-header h3 {
+            color: rgb(75, 230, 75);
+            font-size: 2rem;
+            text-align: center;
+            font-weight: lighter;
+        }
+        .form-card form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .input-group label {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: lighter;
+            padding: 5px;
+        }
+        .input-group input {
+            padding: 5px;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+            width: 100%;
+            border-bottom: solid 1px coral;
+            border-right: solid 1px coral;
+            border-top: solid 1px #fff;
+            border-left: solid 1px #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-family: 'BiteBullet';
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .input-group input::placeholder {
+            color: coral;
+        }
+        .input-group textarea {
+            padding: 5px;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+            width: 100%;
+            border-bottom: solid 1px coral;
+            border-right: solid 1px coral;
+            border-top: solid 1px #fff;
+            border-left: solid 1px #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-family: 'BiteBullet';
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .input-group textarea::placeholder {
+            color: coral;
+        }
+
+        .input-group button {
+            border: none;
+            outline: none;
+            background-color: coral;
+            font-family: 'BiteBullet';
+            font-size: 2rem;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+        }
