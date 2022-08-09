@@ -1,0 +1,166 @@
+<style>
+    .page-horizontal-slider {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-y: visible;
+        overflow-x: scroll;
+        max-width: 100vw;    
+        width: 100vw;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        padding: 20px;
+        padding-bottom: 40px;
+        padding-top: 100px;
+    }
+    .product-card-container {
+        max-width: 300px;
+        min-width: 300px;
+        margin-right: 10px;
+        margin-left: 10px;
+        height: 275px;
+    }
+    
+    .product-card {
+        background-color: rgba(255, 127, 80, 0.5);
+        border: solid 3px coral;
+        box-shadow: 0 22px 12px rgba(0, 0, 0, 0.4);
+        border-radius: 24px;
+        padding: 2px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .product-image-container {
+        padding: 2px;
+        max-width: 300px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: 200px;
+        transition: ease-in-out 1.75s;
+        filter: drop-shadow(0 -5px 6px rgba(0, 0, 0, 0.75));
+    }
+    .product-image img:hover {
+        transform: scale(1.5) translateY(-25px);
+        filter: drop-shadow(0 50px 32px rgba(0, 0, 0, 0.75));
+    }
+
+    .product-data {
+        width: 100%;
+        margin-bottom: 20px;
+        border-top: solid 2px coral;
+        box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.4);
+        
+    }
+    .product-name {
+        padding: 8px;
+        
+    }
+    .product-name h6 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #fff;
+        font-weight: lighter;
+        color: rgb(100, 246, 67);
+        text-shadow: 0 0 2px #fff;
+
+    }
+</style>
+
+<div class="page-header">
+    <h1>
+        <%= title %>
+    </h1>
+</div>
+
+
+
+<div class="page-text-box">
+    <h3>
+        <%= text_box_header %>
+    </h3>
+    <p>
+        <%= text_box %>
+    </p>
+</div>
+</div>
+
+
+<div class="page-horizontal-slider">
+
+    <div class="product-card-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <img src="/images/canna-girls/1.PNG" alt="">
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+            <div class="product-data">
+                <div class="product-name">
+                    <h6>Sierra</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <img src="/images/canna-girls/2.PNG" alt="">
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+            <div class="product-data">
+                <div class="product-name">
+                    <h6>Jemma</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <img src="/images/canna-girls/3.PNG" alt="">
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+            <div class="product-data">
+                <div class="product-name">
+                    <h6>Lexie</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card-container">
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <img src="/images/canna-girls/4.PNG" alt="">
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+            <div class="product-data">
+                <div class="product-name">
+                    <h6>Lily</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="background-image">
+    <img src="<%= background %>" id="bg" alt="">
+</div>

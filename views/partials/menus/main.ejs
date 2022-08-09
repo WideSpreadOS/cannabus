@@ -43,30 +43,34 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        background: rgba(0, 255, 0, 0.25);
+        /* background: rgba(0, 255, 0, 0.25); */
+        background-image: linear-gradient(to right bottom, rgba(255, 127, 80, 0.4), rgba(255, 255, 255, 0.2), rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.15), rgba(255, 127, 80, 0.4));
+        backdrop-filter: blur(6px);
         padding: 8px;
+        padding-bottom: 12px;
         position: fixed;
         top: 0;
         left: 0;
         min-height: 50px;
-        max-height: 100px;
+        /* max-height: 100px; */
         overflow-y: auto;
         border-bottom: 1px solid rgb(75, 230, 75);
-        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4), inset 0 -10px 10px rgba(72, 255, 0, 0.175);
     }
 
     .menu-item {
         padding: 8px;
+        margin-right: 8px;
     }
 
     .menu-item a {
         color: coral;
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         text-decoration: none;
-        text-shadow: 0 0 2px rgb(75, 230, 75);
+        text-shadow: 0 0 2px rgb(152, 230, 75);
         font-family: 'BiteBullet';
         z-index: 99999;
-    }
+    } 
 </style>
 
 
@@ -79,6 +83,7 @@
         <div class="menu-item"><a href="/">Home</a></div>
         <div class="menu-item"><a href="/products">Products</a></div>
         <div class="menu-item"><a href="/schedule">Bus Schedule</a></div>
+        <div class="menu-item"><a href="/canna-girls">CannaGirls</a></div>
         <div class="menu-item"><a href="/about">About Us</a></div>
         <div class="menu-item"><a href="/contact">Contact Us</a></div>
     </div>
