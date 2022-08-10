@@ -27,22 +27,25 @@
         box-shadow: 0 22px 12px rgba(0, 0, 0, 0.4);
         border-radius: 24px;
         padding: 2px;
-        width: 100%;
+        width: 90%;
+        margin-inline: auto;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        transition: ease-in-out 0.75s;
+
     }
 
     .product-image-container {
         padding: 2px;
-        max-width: 300px;
+        max-width: 90%;
     }
 
     .product-image img {
         max-width: 100%;
-        height: 200px;
+        height: 150px;
         transition: ease-in-out 1.75s;
         filter: drop-shadow(0 -5px 6px rgba(0, 0, 0, 0.75));
     }
@@ -54,31 +57,42 @@
     .product-data {
         width: 100%;
         margin-bottom: 20px;
-        border-top: solid 2px coral;
-        box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 16px 18px rgba(0, 0, 0, 0.6);
+        border-radius: 12px;
+        border: solid 1px coral;
+        /* background-color: rgba(255, 255, 255, 0.25); */
+        backdrop-filter: blur(2px);
+        max-width: 90%;
+        margin-inline: auto;
+        transition: ease-in-out 0.75s;
+
         
     }
     .product-name {
-        padding: 8px;
+        width: 100%;
         
     }
     .product-name h6 {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        padding: 2rem;
+        padding-bottom: 8px;
         color: #fff;
         font-weight: lighter;
         color: rgb(100, 246, 67);
-        text-shadow: 0 0 2px #fff;
-
+        text-shadow: 0 0 5px #fff;
+        
     }
-
+    
     .product-price {
         text-align: center;
+        font-size: 2rem;
+        text-shadow: 0 0 5px #fff;
+        padding-bottom: 10px;
     }
     .product-data a {
         color: #fff;
         text-decoration: none;
-        font-size: 1.5rem;
     }
 
 
@@ -147,7 +161,8 @@
         background-color: rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(5px);
         padding: 0.2rem;
-        margin: 0;
+        margin-inline: auto;
+;
         border-radius: 8px;
         margin-top: 50px;
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
@@ -167,6 +182,11 @@
         transition: 500ms ease;
     }
 
+    .tilting-card-wrapper:hover .product-data, .tilting-card-wrapper:hover .product-card {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+    
+    }
     .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
         --rotationY: calc(var(--angle) * -1);
@@ -238,13 +258,31 @@
         <div class="mouse-position-tracker"></div>
         <div class="mouse-position-tracker"></div>
         <div class="tilting-card-body">
-            <h1>Product Card</h1>
-            <p>Product Price</p>
-            <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
+            <div class="product-data">
+                <!-- <button class="purchase-button">Add To Cart</button> -->
+                <div class="product-name">
+                    <h6>CannaWow</h6>
+                </div>
+                <div class="product-price">
+                    <p>$105/oz</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-image">
+                        <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                            <img src="/images/products/1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="product-image-sleeve"></div>
+                </div>
+
+            </div>
         </div>
     </div>
+
+
+
 
 
     <div class="tilting-card-wrapper">
@@ -258,92 +296,67 @@
         <div class="mouse-position-tracker"></div>
         <div class="mouse-position-tracker"></div>
         <div class="tilting-card-body">
-            <h1>Product Card</h1>
-            <p>Product Price</p>
-            <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
+            <div class="product-data">
+                <!-- <button class="purchase-button">Add To Cart</button> -->
+                <div class="product-name">
+                    <h6>CannaWoah</h6>
+                </div>
+                <div class="product-price">
+                    <p>$125/oz</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-image">
+                        <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                            <img src="/images/products/2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="product-image-sleeve"></div>
+                </div>
+    
+            </div>
         </div>
     </div>
 
 
-    <div class="tilting-card-wrapper">
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="mouse-position-tracker"></div>
-        <div class="tilting-card-body">
-            <h1>Product Card</h1>
-            <p>Product Price</p>
-            <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
+
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaGetSmore</h6>
+            </div>
+            <div class="product-price">
+                <p>$115/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/3.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+
         </div>
     </div>
-
-
-<div class="tilting-card-wrapper">
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="tilting-card-body">
-        <h1>Product Card</h1>
-        <p>Product Price</p>
-        <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
-    </div>
 </div>
 
-
-<div class="tilting-card-wrapper">
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="tilting-card-body">
-        <h1>Product Card</h1>
-        <p>Product Price</p>
-        <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
-    </div>
-</div>
-<div class="tilting-card-wrapper">
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="mouse-position-tracker"></div>
-    <div class="tilting-card-body">
-        <h1>Product Card</h1>
-        <p>Product Price</p>
-        <!-- <div class="product-image">
-                <img src="/images/products/1.png" alt="">
-            </div> -->
-    </div>
-</div>
-
+   
 
 
 </div>
