@@ -4,6 +4,7 @@ const ejs = require('ejs')
 const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser')
+const path = require('path')
 const app = express()
 
 
@@ -21,6 +22,7 @@ const app = express()
 
 
 // Middleware
+
 app.use(bodyParser.json());
 
 // Static
