@@ -1,0 +1,86 @@
+<style>
+
+    .schedule-table {
+        background-color: rgba(255, 127, 80, 0.5);
+        padding: 8px;
+        width: 90%;
+        margin-inline: auto;
+        margin-top: 30px;
+        padding: 3px;
+        border-radius: 12px;
+        border: solid 3px coral;
+        overflow: hidden;
+        box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
+    }
+    .schedule-table table {
+        width: 100%;
+        color: #fff;
+    }
+    .schedule-table th {
+        border-bottom: solid 2px #fff;
+        font-size: 1.4rem;
+    }
+    .schedule-table td {
+        text-align: center;
+        border: none;
+        border-bottom: solid 1px #fff;
+        padding: 5px;
+    }
+</style>
+
+
+<div class="page-header">
+    <h1>
+        <%= title %>
+    </h1>
+</div>
+
+
+
+<div class="page-text-box">
+    <h3>
+        <%= text_box_header %>
+    </h3>
+    <p>
+        <%= text_box %>
+    </p>
+</div>
+
+
+
+<div class="schedule-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Arrive</th>
+                <th>Depart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cromwell Square, Cromwell</td>
+                <td>1 p.m.</td>
+                <td>3 p.m.</td>
+            </tr>
+            <tr>
+                <td>Harbor Park, Middletown</td>
+                <td>4 p.m.</td>
+                <td>6 p.m.</td>
+            </tr>
+            <tr>
+                <td>Walnut Hill Park, New Britain</td>
+                <td>7 p.m.</td>
+                <td>9 p.m.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <iframe  frameborder="0"
+        style="border-radius: 26px; box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4); margin-top: 50px; border: solid 3px coral;"
+        src="https://www.bing.com/maps/embed?h=400&w=500&cp=41.610506530160194~-72.69063634663053&lvl=12.246489297302354&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+        scrolling="no">
+    </iframe>
+</div>

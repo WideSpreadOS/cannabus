@@ -42,6 +42,7 @@ app.use(methodOverride('_method'));
 app.use('/', require('./routes/index'));
 app.use('/admin', require('./routes/admin'));
 app.use('/canna-girls', require('./routes/canna-girls'));
+app.use('/schedule', require('./routes/schedule'));
 // app.use('/user', require('./routes/user'));
 
 

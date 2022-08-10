@@ -25,11 +25,11 @@ router.get('/contact', async (req, res) => {
 })
 
 // Bus Schedule Page
-router.get('/schedule', async (req, res) => {
-    res.render('schedule', {title: 'CannaBus Schedule'})
+// router.get('/schedule', async (req, res) => {
+//     res.render('schedule', {title: 'CannaBus Schedule'})
 
 
-})
+// })
 
 // Products Page
 router.get('/products', async (req, res) => {
