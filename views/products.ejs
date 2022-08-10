@@ -81,6 +81,16 @@
         font-size: 1.5rem;
     }
 
+
+    .titlting-card-container {
+        /* background-color: lime; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+
     .tilting-card-body {
         display: grid;
         place-content: center;
@@ -95,6 +105,9 @@
         background-position: center;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
         color: coral;
+        border: solid 1px lime;
+        max-height: 90vh;
+        
     }
     .mouse-position-tracker {
         position: absolute;
@@ -125,7 +138,9 @@
         position: relative;
         width: 15rem;
         aspect-ratio: 1 / 2;
-        margin-inline: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 30px;
     }
     
     .tilting-card-body > :where(h1, p) {
@@ -149,36 +164,49 @@
         --angle: 10deg;
 
         transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
-        transition: transform 500ms ease;
+        transition: 500ms ease;
     }
 
     .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
         --rotationY: calc(var(--angle) * -1);
+        border-right: solid 2px lime;
+        border-bottom: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(2):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
+        border-bottom: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(3):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
         --rotationY: var(--angle);
+        border-left: solid 2px lime;
+        border-bottom: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(4):hover ~ .tilting-card-body {
         --rotationY: calc(var(--angle) * -1 );
+        border-right: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(6):hover ~ .tilting-card-body {
         --rotationY: var(--angle);
+        border-left: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(7):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
         --rotationY: calc(var(--angle) * -1);
+        border-top: solid 2px lime;
+        border-right: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(8):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
+        border-top: solid 2px lime;
     }
     .mouse-position-tracker:nth-child(9):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
         --rotationY: var(--angle);
+        border-top: solid 2px lime;
+        border-left: solid 2px lime;
+
     }
 </style>
 
@@ -197,6 +225,68 @@
 </div>
 
 
+<div class="titlting-card-container">
+
+    <div class="tilting-card-wrapper">
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="tilting-card-body">
+            <h1>Product Card</h1>
+            <p>Product Price</p>
+            <!-- <div class="product-image">
+                <img src="/images/products/1.png" alt="">
+            </div> -->
+        </div>
+    </div>
+
+
+    <div class="tilting-card-wrapper">
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="tilting-card-body">
+            <h1>Product Card</h1>
+            <p>Product Price</p>
+            <!-- <div class="product-image">
+                <img src="/images/products/1.png" alt="">
+            </div> -->
+        </div>
+    </div>
+
+
+    <div class="tilting-card-wrapper">
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="mouse-position-tracker"></div>
+        <div class="tilting-card-body">
+            <h1>Product Card</h1>
+            <p>Product Price</p>
+            <!-- <div class="product-image">
+                <img src="/images/products/1.png" alt="">
+            </div> -->
+        </div>
+    </div>
+
+
 <div class="tilting-card-wrapper">
     <div class="mouse-position-tracker"></div>
     <div class="mouse-position-tracker"></div>
@@ -211,9 +301,51 @@
         <h1>Product Card</h1>
         <p>Product Price</p>
         <!-- <div class="product-image">
-            <img src="/images/products/1.png" alt="">
-        </div> -->
+                <img src="/images/products/1.png" alt="">
+            </div> -->
     </div>
+</div>
+
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <h1>Product Card</h1>
+        <p>Product Price</p>
+        <!-- <div class="product-image">
+                <img src="/images/products/1.png" alt="">
+            </div> -->
+    </div>
+</div>
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <h1>Product Card</h1>
+        <p>Product Price</p>
+        <!-- <div class="product-image">
+                <img src="/images/products/1.png" alt="">
+            </div> -->
+    </div>
+</div>
+
+
+
 </div>
 
 
@@ -231,6 +363,7 @@
                 <div class="product-image-sleeve"></div>
             </div>
             <div class="product-data">
+                <!-- <button class="purchase-button">Add To Cart</button> -->
                 <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
                     <div class="product-name">
                         <h6>CannaWow</h6>
@@ -288,3 +421,41 @@
 
 
 </div>
+
+
+<script>
+    console.log('HELLO')
+    const button = document.querySelector(".purchase-button")
+    button.addEventListener("click", () => {
+        console.log('CLICKED')
+        fetch("http://localhost:3000/checkout/create-checkout-session", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                items: [
+                    { id: 1, quantity: 3 },
+                    { id: 2, quantity: 1 },
+                    { id: 3, quantity: 5 },
+                    { id: 1, quantity: 15 },
+                ],
+            }),
+        })
+            .then(res => {
+                console.log(res)
+                console.log(res.url)
+                if (res.ok) {
+                    return res.json()
+                }
+                return res.json().then(json => Promise.reject(json))
+            })
+            .then(({ url }) => {
+                window.location = url
+                console.log(items)
+            })
+            .catch(e => {
+                console.error(e.error)
+            })
+    })
+</script>

@@ -5,9 +5,23 @@ const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser')
 const path = require('path')
+const passport = require('passport')
+const flash = require('connect-flash')
+const session = require('express-session')
+const crypto = require('crypto');
+
+
+
+
 const app = express()
 
-
+const cors = require("cors")
+app.use(express.json())
+app.use(
+    cors({
+        origin: "http://localhost:5500",
+    })
+)
 // const db = require('./config/keys').MongoURI;
 // // Connect to MongoDB
 // mongoose.connect(db, {
@@ -46,6 +60,7 @@ app.use('/admin', require('./routes/admin'));
 app.use('/canna-girls', require('./routes/canna-girls'));
 app.use('/schedule', require('./routes/schedule'));
 // app.use('/user', require('./routes/user'));
+app.use('/checkout', require('./routes/checkout'));
 
 
 const PORT = process.env.PORT || 3000;
