@@ -226,3 +226,555 @@ body {
             border-radius: 8px;
             color: #fff;
         }
+
+
+
+
+
+
+
+/* 
+
+                    PRODUCT CARDS
+
+*/
+        .page-horizontal-slider {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-y: visible;
+            overflow-x: scroll;
+            max-width: 100vw;
+            width: 100vw;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            padding: 20px;
+            padding-bottom: 40px;
+            padding-top: 100px;
+        }
+    
+        .product-card-container {
+            max-width: 300px;
+            min-width: 300px;
+            margin-right: 10px;
+            margin-left: 10px;
+            /* height: 275px; */
+        }
+    
+        .product-card {
+            /* background-color: rgba(0, 0, 0, 0.25);
+            border: solid 2px coral;
+            box-shadow: 0 22px 12px rgba(0, 0, 0, 0.4);
+            */
+            border-radius: 24px;
+            padding: 2px;
+            width: 90%;
+            margin-inline: auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            transition: ease-in-out 0.75s;
+    
+        }
+    
+        .product-image-container {
+            padding: 2px;
+            max-width: 90%;
+        }
+    
+        .product-image img {
+            max-width: 100%;
+            height: 150px;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
+            transition: ease-in-out 1s;
+        }
+    
+        .product-image img:hover {
+            transform: scale(2) translateY(20px);
+            filter: drop-shadow(0 50px 32px rgba(0, 0, 0, 0.75));
+        }
+    
+        .product-data {
+            width: 100%;
+            margin-bottom: 50px;
+            box-shadow: 0 16px 18px rgba(0, 0, 0, 0.16), inset 0 0 18px rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            border: solid 2px transparent;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(2px);
+            max-width: 100%;
+            transition: ease-in-out 0.75s;
+    
+    
+        }
+    
+        .product-name {
+            width: 100%;
+            padding: 10px;
+    
+        }
+    
+        .product-name h6 {
+            text-align: center;
+            font-size: 2.5rem;
+            padding-bottom: 8px;
+            color: #fff;
+            padding-top: 20px;
+            font-weight: lighter;
+            color: rgb(100, 246, 67);
+            text-shadow: 0 0 2px #fff;
+    
+        }
+    
+        .product-price {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 5px #fff;
+            padding-bottom: 10px;
+        }
+    
+        .product-data a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+    
+        .titlting-card-container {
+            /* background-color: lime; */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+    
+        .tilting-card-body {
+            display: grid;
+            place-content: center;
+            text-align: center;
+            /* border: solid 1px lime; */
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/system/1.png');
+            background-color: rgba(255, 255, 255, 0.05);
+    
+            background-size: cover;
+            border-radius: 12px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4), inset 0 0 50px rgba(255, 255, 255, 0.25);
+            color: coral;
+            border: solid 1px lime;
+            max-height: 90vh;
+            transition: 300ms ease;
+    
+        }
+    
+        .tilting-card-body-overlay {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 127, 80, 0.25));
+            box-shadow: inset -5px -5px 10px rgba(180, 253, 180, 0.15);
+            position: absolute;
+            transition: ease-in-out 1s;
+        }
+    
+        .tilting-card-wrapper:hover .tilting-card-body-overlay {
+            background-color: rgba(0, 255, 0, 0.05);
+            box-shadow: inset 0 0 10px lime, 0 0 20px rgba(0, 255, 0, 0.5);
+            transform: scale(1.025);
+            backdrop-filter: blur(2px);
+        }
+    
+        .mouse-position-tracker {
+            position: absolute;
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+            z-index: 2;
+            /* border: solid 1px red; */
+        }
+    
+        .mouse-position-tracker:nth-child(3n - 2) {
+            left: 0;
+        }
+    
+        .mouse-position-tracker:nth-child(3n - 1) {
+            left: calc(100% / 3);
+        }
+    
+        .mouse-position-tracker:nth-child(3n) {
+            right: 0;
+        }
+    
+        .mouse-position-tracker:nth-child(n + 4):nth-child(-n + 6) {
+            top: calc(100% / 3);
+        }
+    
+        .mouse-position-tracker:nth-child(n + 7):nth-child(-n + 9) {
+            bottom: 0;
+        }
+    
+        .tilting-card-wrapper {
+            position: relative;
+            width: 15rem;
+            aspect-ratio: 1 / 2;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 30px;
+        }
+    
+        .tilting-card-wrapper:hover .tilting-card-body {
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+    
+        .tilting-card-wrapper:hover .product-card {
+            background-color: rgba(0, 0, 0, lime)
+        }
+    
+        .tilting-card-body> :where(h1, p) {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 0.2rem;
+            margin-inline: auto;
+            ;
+            border-radius: 8px;
+            margin-top: 50px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+            border: solid 2px lime;
+        }
+    
+        /*     
+        .mouse-position-tracker:nth-child(9):hover .tilting-card-body > :where(h1, p) {
+            box-shadow: 0 0 30px magenta;
+        }
+         */
+        .tilting-card-body {
+            --perspective: 500px;
+            --rotationX: 0;
+            --rotationY: 0;
+            --rotationZ: 0;
+            --angle: 10deg;
+    
+            transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
+            transition: 1500ms ease;
+        }
+    
+        .tilting-card-wrapper:hover .product-data,
+        .tilting-card-wrapper:hover .product-card {
+            /* background-color: rgba(0, 0, 0, 0.15); */
+            /* backdrop-filter: blur(4px); */
+            /* box-shadow: 0 0 10px coral, inset 0 0 20px rgba(0, 255, 0, 0.25), inset 0 0 4px coral, 0 0 , 0 18px 20px rgba(0, 0, 0, 0.4); */
+            border: none;
+    
+    
+        }
+    
+        .tilting-card-wrapper:hover .product-data,
+        .tilting-card-wrapper:hover .tilting-card-body .product-image-container .product-image img {
+            filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.75));
+        }
+    
+        .tilting-card-wrapper:hover .product-data,
+        .tilting-card-wrapper:hover .product-card {
+            /* filter: drop-shadow(0 0 4px lime); */
+            /* background-color: red; */
+    
+        }
+    
+        .tilting-card-wrapper:hover .product-data,
+        .tilting-card-wrapper:hover .product-card img {
+            /* filter: drop-shadow(0 0 4px lime); */
+            transform: scale(1.2) translateY(-50px);
+    
+        }
+    
+        .tilting-card-wrapper:hover .product-data,
+        .tilting-card-wrapper:hover .product-data {
+            /* background-color: rgba(0, 0, 0, 0.15); */
+            /* backdrop-filter: blur(4px); */
+            /* box-shadow: 0 0 10px coral, inset 0 0 20px rgba(0, 255, 0, 0.25), inset 0 0 4px coral, 0 0 , 0 18px 20px rgba(0, 0, 0, 0.4); */
+            /* border: none; */
+            /* transform: translateY(90px); */
+    
+    
+        }
+    
+    
+    
+        .mouse-position-tracker:nth-child(1):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(1):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+            box-shadow: inset 2px 2px 5px lime, -2px -2px 2px rgb(117, 255, 117);
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+        }
+    
+        .mouse-position-tracker:nth-child(1):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+        .mouse-position-tracker:nth-child(2):hover~.product-data,
+        .tilting-card-wrapper:hover .tilting-card-body .product-image-container .product-image img {
+            filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.5));
+        }
+    
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(2):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+            border-bottom: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(2):hover~.tilting-card-body .product-data {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-bottom: solid 1px lime;
+            box-shadow: inset 0 2px 5px lime, 0 -2px 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(2):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(3):hover~.tilting-card-body {
+            --rotationX: var(--angle);
+            --rotationY: var(--angle);
+            border-left: solid 1px lime;
+            border-bottom: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(3):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            border-left: solid 1px lime;
+            border-bottom: solid 1px lime;
+            box-shadow: inset -2px 2px 5px lime, 2px -2px 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(3):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(4):hover~.tilting-card-body {
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(4):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            box-shadow: inset 2px 0 5px lime, -2px 0 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(4):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(5):hover~.tilting-card-body .product-data {
+            box-shadow: inset 0 0 5px lime, 0 0 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(5):hover~.tilting-card-body .tilting-card-body-overlay {
+    
+    
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.15));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(6):hover~.tilting-card-body {
+            --rotationY: var(--angle);
+            border-left: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(6):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            --rotationY: calc(var(--angle) * -1);
+            border-left: solid 1px lime;
+            box-shadow: inset -2px 0 5px lime, 2px 0 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(6):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(7):hover~.tilting-card-body {
+            --rotationX: calc(var(--angle) * -1);
+            --rotationY: calc(var(--angle) * -1);
+            border-top: solid 1px lime;
+            border-right: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(7):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            border-top: solid 1px lime;
+            border-right: solid 1px lime;
+            box-shadow: inset 2px -2px 5px lime, -2px 2px 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(7):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+    
+    
+    
+    
+        .mouse-position-tracker:nth-child(8):hover~.tilting-card-body {
+            --rotationX: calc(var(--angle) * -1);
+            border-top: solid 1px lime;
+        }
+    
+        .mouse-position-tracker:nth-child(8):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            --rotationY: calc(var(--angle) * -1);
+            border-top: solid 1px lime;
+            box-shadow: inset 0 -2px 5px lime, 0 2px 2px rgb(117, 255, 117);
+    
+        }
+    
+        .mouse-position-tracker:nth-child(8):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+            transition: ease-in-out 500ms;
+    
+        }
+    
+        .mouse-position-tracker:nth-child(9):hover~.tilting-card-body {
+            --rotationX: calc(var(--angle) * -1);
+            --rotationY: var(--angle);
+            border-top: solid 1px lime;
+            border-left: solid 1px lime;
+    
+        }
+    
+    
+    
+        .mouse-position-tracker:nth-child(9):hover~.tilting-card-body .product-data {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-top: solid 1px lime;
+            border-left: solid 1px lime;
+            background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            box-shadow: inset -2px -2px 5px lime, 2px 2px rgb(117, 255, 117);
+    
+        }
+    
+    
+        .mouse-position-tracker:nth-child(9):hover~.tilting-card-body .tilting-card-body-overlay {
+            --rotationX: var(--angle);
+            --rotationY: calc(var(--angle) * -1);
+            border-right: solid 1px lime;
+            border-bottom: solid 1px lime;
+    
+            background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+            transition: ease-in-out 500ms;
+    
+        }
