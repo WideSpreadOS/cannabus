@@ -22,9 +22,10 @@
     }
     
     .product-card {
-        background-color: rgba(255, 127, 80, 0.5);
-        border: solid 3px coral;
+        /* background-color: rgba(0, 0, 0, 0.25);
+        border: solid 2px coral;
         box-shadow: 0 22px 12px rgba(0, 0, 0, 0.4);
+        */
         border-radius: 24px;
         padding: 2px;
         width: 90%;
@@ -46,47 +47,48 @@
     .product-image img {
         max-width: 100%;
         height: 150px;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
         transition: ease-in-out 1.75s;
-        filter: drop-shadow(0 -5px 6px rgba(0, 0, 0, 0.75));
     }
     .product-image img:hover {
-        transform: scale(1.5) translateY(-25px);
+        transform: scale(1.5);
         filter: drop-shadow(0 50px 32px rgba(0, 0, 0, 0.75));
     }
 
     .product-data {
         width: 100%;
-        margin-bottom: 20px;
-        box-shadow: 0 16px 18px rgba(0, 0, 0, 0.6);
+        margin-bottom: 50px;
+        box-shadow: 0 16px 18px rgba(0, 0, 0, 0.6), inset 0 0 18px rgba(255, 255, 255, 0.15);
         border-radius: 12px;
-        border: solid 1px coral;
-        /* background-color: rgba(255, 255, 255, 0.25); */
+        border: solid 2px transparent;
+        background-color: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(2px);
-        max-width: 90%;
-        margin-inline: auto;
+        max-width: 100%;
         transition: ease-in-out 0.75s;
 
         
     }
     .product-name {
         width: 100%;
+        padding: 10px;
         
     }
     .product-name h6 {
         text-align: center;
-        font-size: 1.5rem;
-        padding: 2rem;
+        font-size: 2.5rem;
         padding-bottom: 8px;
         color: #fff;
+        padding-top: 20px;
         font-weight: lighter;
         color: rgb(100, 246, 67);
-        text-shadow: 0 0 5px #fff;
+        text-shadow: 0 0 2px #fff;
         
     }
     
     .product-price {
         text-align: center;
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: bold;
         text-shadow: 0 0 5px #fff;
         padding-bottom: 10px;
     }
@@ -113,7 +115,8 @@
         position: absolute;
         inset: 0;
         background-image: url('/images/system/1.png');
-        background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.15);
+        
         background-size: cover;
         border-radius: 12px;
         background-repeat: no-repeat;
@@ -122,7 +125,24 @@
         color: coral;
         border: solid 1px lime;
         max-height: 90vh;
+        transition: 300ms ease;
         
+    }
+
+    .tilting-card-body-overlay {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 127, 80, 0.25));
+        box-shadow: inset -5px -5px 10px rgba(180, 253, 180, 0.4);
+        position: absolute;
+        transition: ease-in-out 1s;
+    }
+    .tilting-card-wrapper:hover .tilting-card-body-overlay {
+        background-color: rgba(0, 255, 0, 0.15);
+        box-shadow: inset 0 0 10px lime, 0 0 20px rgba(0, 255, 0, 0.5);
+        transform: scale(1.025);
+        backdrop-filter: blur(2px);
     }
     .mouse-position-tracker {
         position: absolute;
@@ -157,9 +177,18 @@
         margin-right: 10px;
         margin-bottom: 30px;
     }
+
+    .tilting-card-wrapper:hover .tilting-card-body {
+        background-color: rgba(0, 0, 0, 0.5)
+        
+    }
+    .tilting-card-wrapper:hover .product-card {
+        background-color: rgba(0, 0, 0, lime)
+        
+    }
     
     .tilting-card-body > :where(h1, p) {
-        background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(5px);
         padding: 0.2rem;
         margin-inline: auto;
@@ -169,9 +198,11 @@
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
         border: solid 2px coral;
     }
-    
-    
-    
+/*     
+    .mouse-position-tracker:nth-child(9):hover .tilting-card-body > :where(h1, p) {
+        box-shadow: 0 0 30px magenta;
+    }
+     */
     .tilting-card-body {
         --perspective: 500px;
         --rotationX: 0;
@@ -180,55 +211,291 @@
         --angle: 10deg;
 
         transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
-        transition: 500ms ease;
+        transition: 1500ms ease;
     }
 
     .tilting-card-wrapper:hover .product-data, .tilting-card-wrapper:hover .product-card {
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0.15);
+        /* backdrop-filter: blur(4px); */
+        /* box-shadow: 0 0 10px coral, inset 0 0 20px rgba(0, 255, 0, 0.25), inset 0 0 4px coral, 0 0 , 0 18px 20px rgba(0, 0, 0, 0.4); */
+        border: none;
+        
     
     }
+    .tilting-card-wrapper:hover .product-data, .tilting-card-wrapper:hover .tilting-card-body .product-image-container .product-image img {
+        filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.75));
+    }
+    
+    .tilting-card-wrapper:hover .product-data, .tilting-card-wrapper:hover .product-card {
+        /* filter: drop-shadow(0 0 4px lime); */
+        /* background-color: red; */
+        transform: translateY(-20px);
+    
+    }
+    .tilting-card-wrapper:hover .product-data, .tilting-card-wrapper:hover .product-card img {
+        /* filter: drop-shadow(0 0 4px lime); */
+        transform: scale(1.5);
+    
+    }
+
+
+
+
+
     .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
         --rotationY: calc(var(--angle) * -1);
-        border-right: solid 2px lime;
-        border-bottom: solid 2px lime;
+        border-right: solid 1px lime;
+        border-bottom: solid 1px lime;
     }
+    .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        border-right: solid 1px lime;
+        border-bottom: solid 1px lime;
+        box-shadow: inset 2px 2px 5px lime, -2px -2px 2px rgb(117, 255, 117);
+        background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+    }
+    .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body .tilting-card-body-overlay {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        border-right: solid 1px lime;
+        border-bottom: solid 1px lime;
+        background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+        transition: ease-in-out 500ms;
+
+    }
+
+
+
+
+
+
+
     .mouse-position-tracker:nth-child(2):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
-        border-bottom: solid 2px lime;
+        border-bottom: solid 1px lime;
     }
+
+        .mouse-position-tracker:nth-child(2):hover ~ .tilting-card-body .product-data {
+            background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        border-bottom: solid 1px lime;
+        box-shadow: inset 0 2px 5px lime, 0 -2px 2px rgb(117, 255, 117);
+
+    }
+        .mouse-position-tracker:nth-child(2):hover ~ .tilting-card-body .tilting-card-body-overlay {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        border-bottom: solid 1px lime;
+    
+        background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        transition: ease-in-out 500ms;
+
+    }
+
+
+
+
+
+
+
     .mouse-position-tracker:nth-child(3):hover ~ .tilting-card-body {
         --rotationX: var(--angle);
         --rotationY: var(--angle);
-        border-left: solid 2px lime;
-        border-bottom: solid 2px lime;
+        border-left: solid 1px lime;
+        border-bottom: solid 1px lime;
     }
+    .mouse-position-tracker:nth-child(3):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+        border-left: solid 1px lime;
+        border-bottom: solid 1px lime;
+        box-shadow: inset -2px 2px 5px lime, 2px -2px 2px rgb(117, 255, 117);
+        
+    }
+    .mouse-position-tracker:nth-child(3):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+    transition: ease-in-out 500ms;
+
+}
+
+
+
+
+
+
+
+
     .mouse-position-tracker:nth-child(4):hover ~ .tilting-card-body {
         --rotationY: calc(var(--angle) * -1 );
-        border-right: solid 2px lime;
+        border-right: solid 1px lime;
     }
+
+    .mouse-position-tracker:nth-child(4):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        --rotationY: calc(var(--angle) * -1);
+        border-right: solid 1px lime;
+        box-shadow: inset 2px 0 5px lime, -2px 0 2px rgb(117, 255, 117);
+        
+    }
+    .mouse-position-tracker:nth-child(4):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+    transition: ease-in-out 500ms;
+    
+}
+
+
+
+
+
+
+
+
+
+.mouse-position-tracker:nth-child(5):hover ~ .tilting-card-body .product-data {
+    box-shadow: inset 0 0 5px lime, 0 0 2px rgb(117, 255, 117);
+    
+}
+.mouse-position-tracker:nth-child(5):hover ~ .tilting-card-body .tilting-card-body-overlay {
+
+
+background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.15));
+transition: ease-in-out 500ms;
+
+}
+
+
+
+
+
+
+
+
     .mouse-position-tracker:nth-child(6):hover ~ .tilting-card-body {
         --rotationY: var(--angle);
-        border-left: solid 2px lime;
+        border-left: solid 1px lime;
     }
+    .mouse-position-tracker:nth-child(6):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        --rotationY: calc(var(--angle) * -1);
+        border-left: solid 1px lime;
+        box-shadow: inset -2px 0 5px lime, 2px 0 2px rgb(117, 255, 117);
+
+    }
+    .mouse-position-tracker:nth-child(6):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+    transition: ease-in-out 500ms;
+
+}
+
+
+
+
+
+
     .mouse-position-tracker:nth-child(7):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
         --rotationY: calc(var(--angle) * -1);
-        border-top: solid 2px lime;
-        border-right: solid 2px lime;
+        border-top: solid 1px lime;
+        border-right: solid 1px lime;
     }
+    .mouse-position-tracker:nth-child(7):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+        border-top: solid 1px lime;
+        border-right: solid 1px lime;
+        box-shadow: inset 2px -2px 5px lime, -2px 2px 2px rgb(117, 255, 117);
+
+    }
+    .mouse-position-tracker:nth-child(7):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+    transition: ease-in-out 500ms;
+
+}
+
+
+
+
+
     .mouse-position-tracker:nth-child(8):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
-        border-top: solid 2px lime;
+        border-top: solid 1px lime;
     }
+    .mouse-position-tracker:nth-child(8):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        --rotationY: calc(var(--angle) * -1);
+        border-top: solid 1px lime;
+        box-shadow: inset 0 -2px 5px lime, 0 2px 2px rgb(117, 255, 117);
+
+    }
+    .mouse-position-tracker:nth-child(8):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+    transition: ease-in-out 500ms;
+
+}
     .mouse-position-tracker:nth-child(9):hover ~ .tilting-card-body {
         --rotationX: calc(var(--angle) * -1);
         --rotationY: var(--angle);
-        border-top: solid 2px lime;
-        border-left: solid 2px lime;
+        border-top: solid 1px lime;
+        border-left: solid 1px lime;
 
     }
+
+
+
+    .mouse-position-tracker:nth-child(9):hover ~ .tilting-card-body .product-data {
+        --rotationX: var(--angle);
+        --rotationY: calc(var(--angle) * -1);
+        border-top: solid 1px lime;
+        border-left: solid 1px lime;
+        background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+        box-shadow: inset -2px -2px 5px lime, 2px  2px rgb(117, 255, 117);
+
+    }
+
+
+    .mouse-position-tracker:nth-child(9):hover ~ .tilting-card-body .tilting-card-body-overlay {
+    --rotationX: var(--angle);
+    --rotationY: calc(var(--angle) * -1);
+    border-right: solid 1px lime;
+    border-bottom: solid 1px lime;
+
+    background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.12));
+    transition: ease-in-out 500ms;
+
+}
 </style>
 
 <div class="page-header">
@@ -259,13 +526,14 @@
         <div class="mouse-position-tracker"></div>
         <div class="mouse-position-tracker"></div>
         <div class="tilting-card-body">
+            <div class="tilting-card-body-overlay"></div>
             <div class="product-data">
                 <!-- <button class="purchase-button">Add To Cart</button> -->
                 <div class="product-name">
                     <h6>CannaWow</h6>
                 </div>
                 <div class="product-price">
-                    <p>$105/oz</p>
+                    <p>$125/oz</p>
                 </div>
             </div>
             <div class="product-card">
@@ -283,7 +551,75 @@
     </div>
 
 
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="tilting-card-body-overlay"></div>
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaWoah</h6>
+            </div>
+            <div class="product-price">
+                <p>$105/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/1.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
 
+        </div>
+    </div>
+</div>
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="tilting-card-body-overlay"></div>
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaGetSmore</h6>
+            </div>
+            <div class="product-price">
+                <p>$115/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/1.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
     <div class="tilting-card-wrapper">
@@ -321,6 +657,117 @@
     </div>
 
 
+
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaGetSmore</h6>
+            </div>
+            <div class="product-price">
+                <p>$115/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/3.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   
+
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaGetSmore</h6>
+            </div>
+            <div class="product-price">
+                <p>$115/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/3.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   
+
+
+<div class="tilting-card-wrapper">
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="mouse-position-tracker"></div>
+    <div class="tilting-card-body">
+        <div class="product-data">
+            <!-- <button class="purchase-button">Add To Cart</button> -->
+            <div class="product-name">
+                <h6>CannaGetSmore</h6>
+            </div>
+            <div class="product-price">
+                <p>$115/oz</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="product-image">
+                    <a target="_blank" href="https://buy.stripe.com/test_7sI02E8Rnch26D6dQR">
+                        <img src="/images/products/3.png" alt="">
+                    </a>
+                </div>
+                <div class="product-image-sleeve"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   
 
 
 <div class="tilting-card-wrapper">
