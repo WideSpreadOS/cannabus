@@ -483,7 +483,7 @@ body {
         .tilting-card-wrapper:hover .product-data {
             background-color: #010010;
             filter: scale(2);
-            border: solid 2ps
+            border: solid 2px;
             box-shadow: 0 0 10px red;
         }
         .tilting-card-wrapper:hover .product-data,
