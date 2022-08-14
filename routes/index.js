@@ -31,6 +31,10 @@ router.get('/contact', async (req, res) => {
 
 // })
 
+
+
+
+
 // Products Page
 router.get('/products', async (req, res) => {
     res.render('products', {
